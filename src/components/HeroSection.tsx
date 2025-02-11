@@ -46,6 +46,17 @@ export default function HeroSection({
                 צור קשר
               </Button>
               <Button
+                variant="outline"
+                className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
+                onClick={() => {
+                  document
+                    .getElementById("brit")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                ברית מילה
+              </Button>
+              <Button
                 className="bg-blue-900 text-white hover:bg-blue-800"
                 onClick={() => {
                   document

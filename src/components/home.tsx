@@ -9,11 +9,6 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Contact Section */}
-      <section id="contact-section">
-        <ContactSection />
-      </section>
-
       {/* About Section */}
       <section id="about-section" className="py-16 px-4 md:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-right">
@@ -29,6 +24,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <MediaGallery />
         </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact-section">
+        <ContactSection />
       </section>
 
       {/* Back to Top Button */}
