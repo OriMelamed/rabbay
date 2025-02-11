@@ -8,8 +8,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white" dir="rtl">
       <MainHeader
-        rabbiName="הרב ישראל ישראלי"
-        quote="מורה דרך רוחני ומנהיג קהילתי"
+        rabbiName="הרב מוהל שלמה לביא"
+        quote="רב קבילת ביניימין ומוהל מומחה"
         profileImage="https://images.unsplash.com/photo-1504199367641-aba8151af406?w=400&h=400&fit=crop"
       />
 

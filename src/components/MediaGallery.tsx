@@ -22,7 +22,6 @@ interface MediaGalleryProps {
 const aboutRabbiText = [
   {
     id: "1",
-    title: "המוהל הרב שלמה לביא",
     content:
       "ברית מילה היא אירוע משמח, אך גם מלווה בחששות עבור ההורים הטריים. הפקדת ביטחונו של תינוקכם בידיו של מוהל מנוסה ומוסמך יכולה להפיג חששות רבים.",
   },
@@ -66,16 +65,23 @@ const faqItems = [
 
 export default function MediaGallery() {
   return (
-    <div className="w-full bg-gray-50 p-6 rounded-lg">
+    <div className="w-full bg-gray-50 p-6 rounded-lg" dir="rtl">
       <Tabs defaultValue="about" dir="rtl" className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-6">
           <TabsTrigger value="about">על הרב</TabsTrigger>
           <TabsTrigger value="faq">שאלות נפוצות</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="about" className="space-y-4">
-          <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-            <div className="space-y-6 text-right">
+        <TabsContent value="about" className="space-y-4 md:p-10">
+          <ScrollArea className="h-[600px] w-full rounded-md border p-10">
+            <div className=" space-y-6 text-right">
+              <div className="flex justify-between">
+                <h1 className="font-bold text-center">הרב שלמה לביא</h1>
+                <img
+                  src="https://images.unsplash.com/photo-1504199367641-aba8151af406?w=400&h=500&fit=crop"
+                  className=" rounded-full h-14 w-14"
+                />
+              </div>
               {aboutRabbiText.map((item) => (
                 <div key={item.id} className="prose prose-lg max-w-none">
                   {item.title && (

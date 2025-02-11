@@ -9,8 +9,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  rabbiName = "הרב ישראל ישראלי",
-  quote = "מחפשים משמעות רוחנית? בואו נצא יחד למסע של גילוי והתחדשות",
+  rabbiName = "הרב מוהל שלמה לביא",
+  quote = "רב קהילת היכל בינימין ומוהל מומחה",
   profileImage = "/rabbi-bg.jpg",
 }: HeroSectionProps) {
   return (
@@ -39,12 +39,13 @@ export default function HeroSection({
                 className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
                 onClick={() => {
                   document
-                    .getElementById("contact-section")
+                    .getElementById("about-section")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                צור קשר
+                אודותי
               </Button>
+
               <Button
                 variant="outline"
                 className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
@@ -57,14 +58,15 @@ export default function HeroSection({
                 ברית מילה
               </Button>
               <Button
-                className="bg-blue-900 text-white hover:bg-blue-800"
+                variant="outline"
+                className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
                 onClick={() => {
                   document
-                    .getElementById("about-section")
+                    .getElementById("contact-section")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                אודותי
+                צור קשר
               </Button>
             </div>
           </Card>
