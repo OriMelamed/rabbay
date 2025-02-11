@@ -19,185 +19,97 @@ interface MediaGalleryProps {
   afterItems?: MediaItem[];
 }
 
-const beforeBritItems: MediaItem[] = [
+const aboutRabbiText = [
   {
     id: "1",
-    title: "הכנות רוחניות לברית",
-    duration: "20:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    title: "המוהל הרב שלמה לביא",
+    content:
+      "ברית מילה היא אירוע משמח, אך גם מלווה בחששות עבור ההורים הטריים. הפקדת ביטחונו של תינוקכם בידיו של מוהל מנוסה ומוסמך יכולה להפיג חששות רבים.",
   },
   {
     id: "2",
-    title: "הלכות ברית מילה",
-    duration: "35:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    content:
+      "ברית המילה שמתבצעת על ידי המוהל הרב שלמה לביא הינה מהירה וחלקה, ללא כאבים מיותרים, תוך שיתוף מלא של ההורים, עם הרבה תמיכה וסבלנות.",
   },
   {
     id: "3",
-    title: "סגולות ומנהגים",
-    duration: "25:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    content:
+      "ברית במינימום כאב לתינוק, התינוק שלכם יעבור ברית במהירות האפשרית על ידי שימוש בכלים סטריליים ואילחוש מקומי אשר יפחית משמעותית את הכאב של הברית אצל התינוק.",
   },
 ];
 
-const duringBritItems: MediaItem[] = [
+const faqItems = [
   {
-    id: "4",
-    title: "סדר הברית",
-    duration: "30:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    id: "1",
+    title: "מה עושים כדי להוריד את הצהבת?",
+    content: [
+      "מומלץ לשים את התינוק באור השמש ללא בגדים (רק עם טיטול) לסרוגין.",
+      "מפורסם בשם הסטייפלר סגולה ליטול לתינוק ידיים פעם ביום.",
+      'יש ברשותנו גמ"ח אבנים המסוגלות להורדת הצהבת.',
+    ],
   },
   {
-    id: "5",
-    title: "תפילות וברכות",
-    duration: "20:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1577037834423-c1a1b245ea8b?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    id: "2",
+    title: "האם המוהל מגיע לפני ואחרי הברית?",
+    content: [
+      "המוהל עובר על המכתב שחרור ונותן הנחיות לגבי הברית. המוהל מגיע גם אחרי הברית כדי להוריד את התחבושת.",
+    ],
   },
   {
-    id: "6",
-    title: "מנהגי הסעודה",
-    duration: "15:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop&q=60",
-    url: "#",
-  },
-];
-
-const afterBritItems: MediaItem[] = [
-  {
-    id: "7",
-    title: "הלכות שמירת התינוק",
-    duration: "25:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&auto=format&fit=crop&q=60",
-    url: "#",
-  },
-  {
-    id: "8",
-    title: "ברכת המזון",
-    duration: "15:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1602631985686-1bb0e6a8696e?w=800&auto=format&fit=crop&q=60",
-    url: "#",
-  },
-  {
-    id: "9",
-    title: "מנהגי השבוע הראשון",
-    duration: "20:00",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&auto=format&fit=crop&q=60",
-    url: "#",
+    id: "3",
+    title: "האם הברית מתבצעת בהרדמה?",
+    content: [
+      "לא, זריקת ההרדמה עלולה להכאיב יותר לתינוק מאשר ברית המתבצעת לפי המסורת היהודית ולאחריה אלחוש מקומי.",
+    ],
   },
 ];
 
-export default function MediaGallery({
-  beforeItems = beforeBritItems,
-  duringItems = duringBritItems,
-  afterItems = afterBritItems,
-}: MediaGalleryProps) {
+export default function MediaGallery() {
   return (
     <div className="w-full bg-gray-50 p-6 rounded-lg">
-      <h2 className="text-3xl font-bold text-right mb-6">ברית מילה</h2>
-
-      <Tabs defaultValue="before" dir="rtl" className="w-full">
-        <TabsList className="grid w-full grid-cols-3 mb-6">
-          <TabsTrigger value="before">לפני הברית</TabsTrigger>
-          <TabsTrigger value="during">יום הברית</TabsTrigger>
-          <TabsTrigger value="after">אחרי הברית</TabsTrigger>
+      <Tabs defaultValue="about" dir="rtl" className="w-full">
+        <TabsList className="grid w-full grid-cols-2 mb-6">
+          <TabsTrigger value="about">על הרב</TabsTrigger>
+          <TabsTrigger value="faq">שאלות נפוצות</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="before" className="space-y-4">
+        <TabsContent value="about" className="space-y-4">
           <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {beforeItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden">
-                  <div className="relative aspect-video">
-                    <img
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="object-cover w-full h-full"
-                    />
-                    <Button
-                      variant="secondary"
-                      size="icon"
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
-                    >
-                      <Play className="h-6 w-6" />
-                    </Button>
-                  </div>
-                  <CardContent className="p-4 text-right">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm text-gray-500">{item.duration}</p>
-                  </CardContent>
-                </Card>
+            <div className="space-y-6 text-right">
+              {aboutRabbiText.map((item) => (
+                <div key={item.id} className="prose prose-lg max-w-none">
+                  {item.title && (
+                    <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                  )}
+                  <p className="text-gray-700">{item.content}</p>
+                </div>
               ))}
             </div>
           </ScrollArea>
         </TabsContent>
 
-        <TabsContent value="during" className="space-y-4">
+        <TabsContent value="faq" className="space-y-4">
           <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {duringItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden">
-                  <div className="relative aspect-video">
-                    <img
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="object-cover w-full h-full"
-                    />
-                    <Button
-                      variant="secondary"
-                      size="icon"
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
-                    >
-                      <Play className="h-6 w-6" />
-                    </Button>
+            <div className="space-y-8">
+              {faqItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <h3 className="text-xl font-bold mb-4 text-right text-blue-900 border-b pb-2">
+                    {item.title}
+                  </h3>
+                  <div className="space-y-3">
+                    {item.content.map((text, index) => (
+                      <p
+                        key={index}
+                        className="text-gray-700 text-right leading-relaxed"
+                      >
+                        {text}
+                      </p>
+                    ))}
                   </div>
-                  <CardContent className="p-4 text-right">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm text-gray-500">{item.duration}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </ScrollArea>
-        </TabsContent>
-
-        <TabsContent value="after" className="space-y-4">
-          <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {afterItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden">
-                  <div className="relative aspect-video">
-                    <img
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="object-cover w-full h-full"
-                    />
-                    <Button
-                      variant="secondary"
-                      size="icon"
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 hover:bg-white"
-                    >
-                      <Play className="h-6 w-6" />
-                    </Button>
-                  </div>
-                  <CardContent className="p-4 text-right">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm text-gray-500">{item.duration}</p>
-                  </CardContent>
-                </Card>
+                </div>
               ))}
             </div>
           </ScrollArea>
