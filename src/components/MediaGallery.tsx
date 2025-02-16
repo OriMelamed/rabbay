@@ -65,20 +65,31 @@ const faqItems = [
 
 export default function MediaGallery() {
   return (
-    <div className="w-full bg-gray-50 p-6 rounded-lg" dir="rtl">
+    <div className="w-full bg-white" dir="rtl">
+      <h2 className="text-4xl font-bold mb-8 text-right">ברית מילה</h2>
       <Tabs defaultValue="about" dir="rtl" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 mb-6">
-          <TabsTrigger value="about">על הרב</TabsTrigger>
-          <TabsTrigger value="faq">שאלות נפוצות</TabsTrigger>
-        </TabsList>
+        <TabsList className="grid w-full grid-cols-3 mb-6 bg-gray-100">
+          <TabsTrigger value="about" className="data-[state=active]:bg-white">
+            על הרב
+          </TabsTrigger>
 
-        <TabsContent value="about" className="space-y-4 md:p-10">
-          <ScrollArea className="h-[600px] w-full rounded-md border p-10">
+          <TabsTrigger value="faq" className="data-[state=active]:bg-white">
+            שאלות נפוצות
+          </TabsTrigger>
+          <TabsTrigger
+            value="preparations"
+            className="data-[state=active]:bg-white"
+          >
+            הכנות לברית
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="about" className="space-y-4">
+          <ScrollArea className="h-[600px] w-full rounded-md border p-4">
             <div className=" space-y-6 text-right">
               <div className="flex justify-between">
                 <h1 className="font-bold text-center">הרב שלמה לביא</h1>
                 <img
-                  src="https://images.unsplash.com/photo-1504199367641-aba8151af406?w=400&h=500&fit=crop"
+                  src="https://ravshlomobucket.s3.us-east-1.amazonaws.com/harav.jpeg"
                   className=" rounded-full h-14 w-14"
                 />
               </div>
@@ -117,6 +128,45 @@ export default function MediaGallery() {
                   </div>
                 </div>
               ))}
+            </div>
+          </ScrollArea>
+        </TabsContent>
+
+        <TabsContent value="preparations" className="space-y-4">
+          <ScrollArea className="h-[600px] w-full rounded-md border p-4">
+            <div className="space-y-8">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h3 className="text-xl font-bold mb-4 text-right text-blue-900 border-b pb-2">
+                  הכנות לפני הברית
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    1. יש לוודא שהתינוק בריא ומוכן לברית
+                  </p>
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    2. יש להכין את כל הציוד הנדרש כולל חיתולים וביגוד נקי
+                  </p>
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    3. מומלץ להאכיל את התינוק כשעתיים לפני הברית
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h3 className="text-xl font-bold mb-4 text-right text-blue-900 border-b pb-2">
+                  הכנות ביום הברית
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    1. להגיע עם התינוק למקום הברית בזמן
+                  </p>
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    2. להביא את כל המסמכים הנדרשים
+                  </p>
+                  <p className="text-gray-700 text-right leading-relaxed">
+                    3. לוודא שיש מניין (10 גברים) לטקס
+                  </p>
+                </div>
+              </div>
             </div>
           </ScrollArea>
         </TabsContent>

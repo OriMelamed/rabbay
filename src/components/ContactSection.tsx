@@ -26,7 +26,7 @@ const ContactSection = ({
   defaultOpen = true,
 }: ContactSectionProps) => {
   return (
-    <section className="w-full min-h-[400px] bg-gray-50 py-12 px-4" dir="rtl">
+    <section className="w-full bg-gray-50 py-12 px-4" dir="rtl">
       <div className="max-w-4xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="flex items-center justify-center">

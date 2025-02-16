@@ -9,12 +9,12 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  rabbiName = "הרב מוהל שלמה לביא",
+  rabbiName = "רב מוהל שלמה לביא",
   quote = "רב קהילת היכל בינימין ומוהל מומחה",
-  profileImage = "/rabbi-bg.jpg",
+  profileImage = "https://ravshlomobucket.s3.us-east-1.amazonaws.com/harav.jpeg",
 }: HeroSectionProps) {
   return (
-    <section className="relative h-[600px] w-full bg-slate-50 overflow-hidden">
+    <section className="relative h-[500px] w-full bg-slate-50 overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-blue-900/80" />
 
@@ -27,12 +27,12 @@ export default function HeroSection({
 
       {/* Content container */}
       <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-end justify-center h-full text-right">
-          <Card className="bg-white/90 backdrop-blur-sm p-8 max-w-2xl">
-            <h1 className="text-4xl font-bold mb-4 text-blue-900">
+        <div className="flex flex-col items-end justify-end h-full text-right">
+          <Card className="bg-white/90 backdrop-blur-sm p-8 mb-10 max-w-2xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-blue-900">
               {rabbiName}
             </h1>
-            <p className="text-xl text-blue-800 mb-6">{quote}</p>
+            <p className="text-md md:text-xl text-blue-800 mb-6">{quote}</p>
             <div className="flex justify-start gap-4">
               <Button
                 variant="outline"
