@@ -23,17 +23,26 @@ const aboutRabbiText = [
   {
     id: "1",
     content:
-      "ברית מילה היא אירוע משמח, אך גם מלווה בחששות עבור ההורים הטריים. הפקדת ביטחונו של תינוקכם בידיו של מוהל מנוסה ומוסמך יכולה להפיג חששות רבים.",
+      "מוהל מנוסה ומוסמך, המציע טקס ברית ללא כאבים מיותרים, תוך שיתוף מלא של ההורים, ועם הרבה תמיכה וסבלנות. ברית במינימום כאב לתינוק.",
   },
   {
     id: "2",
-    content:
-      "ברית המילה שמתבצעת על ידי המוהל הרב שלמה לביא הינה מהירה וחלקה, ללא כאבים מיותרים, תוך שיתוף מלא של ההורים, עם הרבה תמיכה וסבלנות.",
+    title: "מקפיד על:",
+    items: [
+      "שימוש בציוד סטרילי מהמתקדמים ביותר",
+      "שיטת אלחוש עדינה במיוחד להפחתת כאב",
+      "תקשורת רציפה איתכם לפני, במהלך ואחרי הברית",
+      "זמינות מלאה לכל שאלה או חשש",
+    ],
   },
   {
     id: "3",
     content:
-      "ברית במינימום כאב לתינוק, התינוק שלכם יעבור ברית במהירות האפשרית על ידי שימוש בכלים סטריליים ואילחוש מקומי אשר יפחית משמעותית את הכאב של הברית אצל התינוק.",
+      "ליווי אישי וצמוד כדי להפיג את החששות שלכם, וכדי שתוכלו לחוות את ברית המילה של ילדכם כאירוע משמח ומרגש במסע ההורות שלכם.",
+  },
+  {
+    id: "4",
+    content: "תושב מודיעין.",
   },
 ];
 
@@ -70,11 +79,7 @@ export default function MediaGallery() {
       <Tabs defaultValue="about" dir="rtl" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-6 bg-gray-100">
           <TabsTrigger value="about" className="data-[state=active]:bg-white">
-            על הרב
-          </TabsTrigger>
-
-          <TabsTrigger value="faq" className="data-[state=active]:bg-white">
-            שאלות נפוצות
+            ברית עם הרב
           </TabsTrigger>
           <TabsTrigger
             value="preparations"
@@ -82,27 +87,51 @@ export default function MediaGallery() {
           >
             הכנות לברית
           </TabsTrigger>
+          <TabsTrigger value="faq" className="data-[state=active]:bg-white">
+            שאלות נפוצות
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="about" className="space-y-4">
-          <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-            <div className=" space-y-6 text-right">
-              <div className="flex justify-between">
-                <h1 className="font-bold text-center">הרב שלמה לביא</h1>
-                <img
-                  src="https://ravshlomobucket.s3.us-east-1.amazonaws.com/harav.jpeg"
-                  className=" rounded-full h-14 w-14"
-                />
+          <div className="flex flex-row h-[600px] w-full">
+            {/* Content Section - 2/3 width */}
+            <div className="flex-grow px-8">
+              <div className="text-right">
+                {aboutRabbiText.map((item, index) => (
+                  <div key={item.id} className="mb-8">
+                    {item.title ? (
+                      <>
+                        <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                        <ul className="list-none space-y-3">
+                          {item.items?.map((listItem, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-gray-700"
+                            >
+                              <span className="text-gray-400 mt-1">-</span>
+                              <span>{listItem}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <p className="text-gray-700 leading-relaxed">
+                        {item.content}
+                      </p>
+                    )}
+                  </div>
+                ))}
               </div>
-              {aboutRabbiText.map((item) => (
-                <div key={item.id} className="prose prose-lg max-w-none">
-                  {item.title && (
-                    <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                  )}
-                  <p className="text-gray-700">{item.content}</p>
-                </div>
-              ))}
             </div>
-          </ScrollArea>
+
+            {/* Image Section - 1/3 width */}
+            <div className="w-1/3">
+              <img
+                src="https://ravshlomobucket.s3.us-east-1.amazonaws.com/brit.jpg"
+                className="w-full h-full object-cover"
+                alt="ברית מילה"
+              />
+            </div>
+          </div>
         </TabsContent>
 
         <TabsContent value="faq" className="space-y-4">

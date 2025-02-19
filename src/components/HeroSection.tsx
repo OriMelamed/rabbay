@@ -9,8 +9,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  rabbiName = "רב מוהל שלמה לביא",
-  quote = "רב קהילת היכל בינימין ומוהל מומחה",
+  rabbiName = "הרב שלמה לביא",
+  quote = "מוהל רפואי מוסמך",
   profileImage = "https://ravshlomobucket.s3.us-east-1.amazonaws.com/harav.jpeg",
 }: HeroSectionProps) {
   return (
@@ -26,50 +26,54 @@ export default function HeroSection({
       />
 
       {/* Content container */}
-      <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-end justify-end h-full text-right">
-          <Card className="bg-white/90 backdrop-blur-sm p-8 mb-10 max-w-2xl">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-blue-900">
-              {rabbiName}
-            </h1>
-            <p className="text-md md:text-xl text-blue-800 mb-6">{quote}</p>
-            <div className="flex justify-start gap-4">
-              <Button
-                variant="outline"
-                className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
-                onClick={() => {
-                  document
-                    .getElementById("about-section")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                אודותי
-              </Button>
+      <div className="absolute inset-0 z-10">
+        <div className="h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-full items-end pb-12 justify-start">
+            <Card className="bg-white/90 backdrop-blur-sm p-8 max-w-2xl ml-0">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-blue-900">
+                {rabbiName}
+              </h1>
+              <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-blue-900">
+                {quote}
+              </h1>
+              <div className="flex justify-start gap-4">
+                <Button
+                  variant="outline"
+                  className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
+                  onClick={() => {
+                    document
+                      .getElementById("about-section")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  אודותי
+                </Button>
 
-              <Button
-                variant="outline"
-                className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
-                onClick={() => {
-                  document
-                    .getElementById("brit")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                ברית מילה
-              </Button>
-              <Button
-                variant="outline"
-                className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
-                onClick={() => {
-                  document
-                    .getElementById("contact-section")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                צור קשר
-              </Button>
-            </div>
-          </Card>
+                <Button
+                  variant="outline"
+                  className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
+                  onClick={() => {
+                    document
+                      .getElementById("brit")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  ברית מילה
+                </Button>
+                <Button
+                  variant="outline"
+                  className="text-blue-900 border-blue-900 hover:bg-blue-900 hover:text-white"
+                  onClick={() => {
+                    document
+                      .getElementById("contact-section")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  צור קשר
+                </Button>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
